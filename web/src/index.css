@@ -1,0 +1,231 @@
+:root {
+  --bg: #0f1115;
+  --panel: #181b21;
+  --text: #e6e6e6;
+  --muted: #8b929d;
+  --accent: #4f8cff;
+  --accent-hover: #6fa1ff;
+  --success: #3ccf4a;
+  --warning: #ffaa3b;
+  --danger: #ff4d4d;
+  --radius: 0.5rem;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--panel);
+  border-bottom: 1px solid #2a2e36;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.status.ok {
+  background: rgba(60, 207, 74, 0.15);
+  color: var(--success);
+}
+
+.status.bad {
+  background: rgba(255, 77, 77, 0.15);
+  color: var(--danger);
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-sidebar {
+  background: var(--panel);
+  border-right: 1px solid #2a2e36;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.placeholder {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.agent-list h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+.agent-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.agent-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #2a2e36;
+  border-radius: var(--radius);
+  background: #20242c;
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agent-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.agent-status {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.agent-status-available {
+  background: rgba(60, 207, 74, 0.15);
+  color: var(--success);
+}
+
+.agent-status-reserved {
+  background: rgba(255, 170, 59, 0.15);
+  color: var(--warning);
+}
+
+.agent-status-streaming {
+  background: rgba(79, 140, 255, 0.15);
+  color: var(--accent);
+}
+
+.agent-status-offline {
+  background: rgba(139, 146, 157, 0.15);
+  color: var(--muted);
+}
+
+.agent-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.agent-meta strong {
+  color: var(--text);
+}
+
+.agent-connect {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.agent-connect:hover {
+  background: var(--accent-hover);
+}
+
+.session-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.session-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--panel);
+  border-radius: var(--radius);
+}
+
+.session-info {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.session-close {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--danger);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.session-video {
+  display: flex;
+  flex: 1;
+  background: black;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.session-video canvas {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
