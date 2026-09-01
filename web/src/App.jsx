@@ -101,7 +101,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Perrubi Operator</h1>
+        <h1>Gatubi Operator</h1>
         <div className={`status ${connected ? 'ok' : 'bad'}`}>{statusText}</div>
       </header>
       <main className="app-main">
